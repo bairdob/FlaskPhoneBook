@@ -6,5 +6,5 @@
 ## Скриншоты
 
 <p float="left">
- <img src="pic/flaskPhoneBook.gif" width=45% height=45%>
+ <img src="pic/flaskPhoneBook.gif" width=75% height=75%>
 </p>
