@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone book</title>
+</head>
+<body bgcolor="#ffe4c4">
+    <a href="/name/add">/name/add</a> <br>
+    <a href="/name/delete">/name/delete</a>
+    <p>
+    <table border="1" cellpadding="7" cellspacing="0">
+        <tr>
+          <th>u_id</th>
+          <th>surname</th>
+          <th>name</th>
+          <th>patronymic</th>
+          <th>street</th>
+          <th>building</th>
+          <th>corpus</th>
+          <th>phone</th>
+        </tr>
+        {% for it in mainTable %}
+        <tr>
+            <td>{{ it['u_id'] }} </td>
+            <td>{{ it['surname'] }} </td>
+            <td>{{ it['name'] }} </td>
+            <td>{{ it['patronymic'] }} </td>
+            <td>{{ it['street'] }} </td>
+            <td>{{ it['building'] }} </td>
+            <td>{{ it['corpus'] }} </td>
+            <td>{{ it['phone'] }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </p>
+    <p>
+      <form action="" method="post">
+        <p>
+            <label for="surname">surname</label>
+            <input type="text" name="surname" placeholder="Enter surname">
+        </p>
+        <p>
+            <label for="name">name</label>
+            <input type="search" list="name" placeholder="Enter name">
+            <datalist id="name">
+                {% for opt in option %}
+                  <option value="{{ opt }}"></option>
+                {% endfor %}
+            </datalist>
+        </p>
+        <p>
+            <label for="patronymic">patronymic</label>
+            <input type="text" name="patronymic" placeholder="Enter patronymic">
+        </p>
+        <p>
+            <label for="street">street</label>
+            <input type="text" name="street" placeholder="Enter street">
+        </p>
+        <p>
+            <label for="building">building</label>
+            <input type="text" name="building" placeholder="Enter building">
+        </p>
+        <p>
+            <label for="corpus">corpus</label>
+            <input type="text" name="corpus" placeholder="Enter corpus">
+        </p>
+        <p>
+            <label for="phone">phone</label>
+            <input type="text" name="phone" placeholder="Enter phone">
+        </p>
+            <input type="submit" value="Add">
+    </form>
+    </p>
+</body>
+</html>

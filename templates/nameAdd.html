@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Name add</title>
+</head>
+<body bgcolor="#ffe4c4">
+<a href="/">/</a> <br>
+
+<p> Name Table </p>
+<table border="1" cellpadding="7" cellspacing="0">
+    {% for it in nameList %}
+    <tr>
+        <td>{{ it['name_id'] }} </td>
+        <td>{{ it['name_value'] }} </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<form action="" method="post">
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter name">
+    </p>
+        <input type="submit" value="Add">
+</form>
+
+</body>
+</html>
