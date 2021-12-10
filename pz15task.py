@@ -66,14 +66,15 @@ def add():
 
 @app.route('/name/delete', methods=['post', 'get'])
 def delete():
-    name = request.form.get('name')
-    print(name)
-    cursor.execute('DELETE FROM name WHERE name_value = \'%s\'' % name)
-    conn.commit()
-    for i in range(len(nameDict)):
-        if nameDict[i]['name_value'] == name:
-            del nameDict[i]
-            break
+    if request.method == 'POST':
+        name = request.form.get('name')
+        print(name)
+        cursor.execute('DELETE FROM name WHERE name_value = \'%s\'' % name)
+        conn.commit()
+        for i in range(len(nameDict)):
+            if nameDict[i]['name_value'] == name:
+                del nameDict[i]
+                break
     return render_template('nameDelete.html', nameList=nameDict)
 
 
